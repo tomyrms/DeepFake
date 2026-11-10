@@ -15,6 +15,7 @@ Robin a terminé une première installation de **Deep-Live-Cam** sur son PC. Son
 - [Planning et tableau de suivi](https://github.com/users/tomyrms/projects/3)
 - [Issues : phases, tâches et décisions](https://github.com/tomyrms/DeepFake/issues)
 - [Journal de travail](docs/journal/README.md)
+- [Comment on travaille à deux](docs/organisation.md)
 - [Première séance — 10 novembre 2026](docs/journal/2026-11-10.md)
 - [Recherche sur les outils et le matériel](docs/recherche-materiel.md)
 - [Synthèse et Gantt en PDF](docs/exports/synthese-et-gantt.pdf)

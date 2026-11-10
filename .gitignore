@@ -1,0 +1,26 @@
+# Environnements Python et caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Configuration privée
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Modèles et médias de travail : à conserver hors du dépôt
+models/
+data/
+recordings/
+*.onnx
+*.pth
+*.pt
+*.safetensors
+
+# Fichiers locaux
+.DS_Store
+Thumbs.db
