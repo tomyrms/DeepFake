@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="980" viewBox="0 0 1600 980">
+<rect width="1600" height="980" fill="#F4F7FA"/>
+<text x="64" y="49" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700" fill="#172C3D">Une webcam locale, un calcul distant</text>
+<text x="64" y="118" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="400" fill="#526677">Architecture envisagée : le même PC assure la capture et l’affichage.</text>
+<rect x="64" y="238" width="350" height="440" rx="18" fill="#FFFFFF" stroke="#D7E1E8" stroke-width="1"/>
+<ellipse cx="110.0" cy="284.0" rx="18.0" ry="18.0" fill="#215F9B"/>
+<text x="110" y="267" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">1</text>
+<text x="146" y="267" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#172C3D">PC de l’école</text>
+<rect x="570" y="238" width="460" height="440" rx="18" fill="#FFFFFF" stroke="#D7E1E8" stroke-width="1"/>
+<ellipse cx="616.0" cy="284.0" rx="18.0" ry="18.0" fill="#167B71"/>
+<text x="616" y="267" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">2</text>
+<text x="652" y="267" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#172C3D">Serveur distant</text>
+<rect x="1186" y="238" width="350" height="440" rx="18" fill="#FFFFFF" stroke="#D7E1E8" stroke-width="1"/>
+<ellipse cx="1232.0" cy="284.0" rx="18.0" ry="18.0" fill="#215F9B"/>
+<text x="1232" y="267" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700" fill="#FFFFFF">3</text>
+<text x="1268" y="267" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" fill="#172C3D">PC de l’école</text>
+<rect x="190" y="343" width="98" height="58" rx="12" fill="#EAF1F8" stroke="#215F9B" stroke-width="3"/>
+<ellipse cx="239.0" cy="372.0" rx="18.0" ry="18.0" fill="#FFFFFF" stroke="#215F9B" stroke-width="3"/>
+<ellipse cx="239.0" cy="372.0" rx="7.0" ry="7.0" fill="#215F9B"/>
+<polyline points="239,404 239,419" fill="none" stroke="#215F9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="210,421 268,421" fill="none" stroke="#215F9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="768" y="351" width="64" height="64" rx="8" fill="#E8F4F1" stroke="#167B71" stroke-width="3"/>
+<rect x="784" y="367" width="32" height="32" rx="3" fill="#FFFFFF" stroke="#167B71" stroke-width="2"/>
+<polyline points="778,343 778,351" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="778,415 778,423" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="760,361 768,361" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="832,361 840,361" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="792,343 792,351" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="792,415 792,423" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="760,375 768,375" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="832,375 840,375" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="806,343 806,351" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="806,415 806,423" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="760,389 768,389" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="832,389 840,389" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="820,343 820,351" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="820,415 820,423" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="760,403 768,403" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="832,403 840,403" fill="none" stroke="#167B71" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="1311" y="343" width="100" height="64" rx="7" fill="#EAF1F8" stroke="#215F9B" stroke-width="3"/>
+<polyline points="1361,409 1361,424" fill="none" stroke="#215F9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1335,425 1387,425" fill="none" stroke="#215F9B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="1361.0" cy="365.0" rx="10.0" ry="10.0" fill="#FFFFFF" stroke="#215F9B" stroke-width="2"/>
+<rect x="1342" y="380" width="38" height="13" rx="6" fill="#FFFFFF" stroke="#215F9B" stroke-width="2"/>
+<text x="239" y="465" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700" fill="#215F9B">Capture webcam</text>
+<text x="239" y="518" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="400" fill="#526677">Envoi des images</text>
+<text x="239" y="558" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="400" fill="#526677">via Internet</text>
+<text x="800" y="465" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700" fill="#167B71">Traitement sur le GPU</text>
+<text x="800" y="518" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#526677">Détection · échange de visage</text>
+<text x="800" y="558" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#526677">Amélioration facultative</text>
+<text x="800" y="598" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#526677">Encodage du flux de retour</text>
+<text x="1361" y="465" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="700" fill="#215F9B">Images transformées</text>
+<text x="1361" y="518" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#526677">Affichage ou sortie</text>
+<text x="1361" y="558" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="400" fill="#526677">en webcam virtuelle</text>
+<text x="491" y="352" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#215F9B">Flux</text>
+<text x="491" y="386" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#215F9B">montant</text>
+<polyline points="436,443 548,443" fill="none" stroke="#215F9B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="534,433 548,443 534,453" fill="none" stroke="#215F9B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1108" y="352" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#215F9B">Flux</text>
+<text x="1108" y="386" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="400" fill="#215F9B">retour</text>
+<polyline points="1052,443 1164,443" fill="none" stroke="#215F9B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<polyline points="1150,433 1164,443 1150,453" fill="none" stroke="#215F9B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="64" y="725" width="1472" height="76" rx="10" fill="#E8EEF4"/>
+<text x="800" y="747" dominant-baseline="text-before-edge" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="29" font-weight="700" fill="#172C3D">Transport vidéo et retour local à intégrer et à tester</text>
+<text x="64" y="844" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="700" fill="#172C3D">Délai total = capture + envoi + calcul + retour + affichage</text>
+<text x="64" y="900" dominant-baseline="text-before-edge" text-anchor="start" font-family="Segoe UI, Arial, sans-serif" font-size="27" font-weight="400" fill="#526677">La puissance du GPU ne supprime pas la latence ni les contraintes du réseau.</text>
+</svg>

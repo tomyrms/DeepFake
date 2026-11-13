@@ -1,38 +1,45 @@
 # Journal de travail
 
-Ce journal garde une trace des séances de Tomas et Robin : ce que nous voulions faire, ce qui s’est réellement passé et la suite à donner. Il servira à rédiger le rapport et à expliquer nos choix aux professeurs.
+Un bilan **par semaine**, du lundi au dimanche, avec les dates, les contributions de Tomas et de Robin, les résultats et les décisions.
 
-## Séances
+## Semaines
 
-- [10 novembre 2026 — préparation et organisation du projet](2026-11-10.md)
+- [Semaine 46 — du 9 au 15 novembre 2026](2026-W46.md) — organisation du 10, recherches du 11, essais des 11 et 12. Bilan en cours au 13 novembre.
 
-## Ajouter une séance
+Annexes : [FasterLivePortrait](2026-W46-fasterliveportrait.md) · [ComfyUI et LivePortrait](2026-W46-notes-techniques.md).
 
-Créer un fichier nommé `AAAA-MM-JJ.md` dans ce dossier, reprendre le modèle ci-dessous et ajouter son lien à la liste des séances. Si nous travaillons séparément, préciser qui a fait quoi. Pour plusieurs interventions le même jour, compléter le même fichier en indiquant les auteurs.
+Archive : [compte rendu du 10 novembre](2026-11-10.md), repris dans le bilan hebdomadaire.
 
-Quelques phrases concrètes suffisent. Séparer un résultat observé d’une hypothèse ou d’un travail prévu, noter les difficultés et relier les issues, commits ou essais utiles. Renseigner les durées seulement si elles ont été relevées. Ce journal est public : les informations d’accès et les données personnelles des participants restent en dehors du dépôt.
+## Compléter une semaine
 
-## Modèle
+Créer un fichier `AAAA-WNN.md` (année et semaine ISO), l’ajouter à l’index et le compléter au fil de la semaine. Indiquer « bilan en cours » et la date de mise à jour tant qu’il n’est pas terminé.
+
+Écrire à la première personne, préciser la date réelle du travail et distinguer les résultats des pistes à tester. Garder les détails d’installation en annexe et ne pas inventer de durées ou de mesures.
+
+## Modèle hebdomadaire
 
 ```markdown
-# Séance du AAAA-MM-JJ
+# Semaine NN du JJ au JJ mois AAAA
 
-Participants : Tomas / Robin — à adapter.
+**Tomas et Robin — bilan en cours, arrêté au JJ mois AAAA.**
 
-## Objectifs
+## Objectif de la semaine
 
-Ce que nous avions prévu pour cette séance.
+Nous voulions…
 
-## Notes
+## Tomas — date — sujet
 
-Travail réalisé, résultats observés, décisions et difficultés.
-Préciser l’auteur de chaque contribution si nécessaire.
-Ajouter les liens vers les issues, commits et sources utiles.
+J’ai… Résultat, difficulté rencontrée et solution appliquée.
 
-## Prochaine séance
+## Robin — date — sujet
 
-- Action concrète à poursuivre.
-- Point à vérifier ou décision à prendre.
+J’ai… Résultat, difficulté rencontrée et solution appliquée.
+
+## Bilan de la semaine
+
+Résultats, décisions et points restant à vérifier.
+
+[Retour au journal](README.md)
 ```
 
 [Retour au projet](../../README.md) · [Planning](https://github.com/users/tomyrms/projects/3)
