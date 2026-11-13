@@ -8,7 +8,7 @@ Recherche préliminaire du **10 novembre 2026**, pour le projet scolaire de Toma
 
 Le PC disponible possède un **Intel Core i7-13700HX**, une **NVIDIA GeForce RTX 4070 Laptop avec environ 8 Go de VRAM** et environ **32 Go de RAM**, d’après l’inventaire réalisé. Il servira de première machine d’essai. Aucun débit ni délai d’affichage n’a encore été mesuré : sa capacité à assurer la démonstration en direct reste à vérifier.
 
-Robin a depuis terminé une première installation de **Deep-Live-Cam sur son PC**, également équipé d’une RTX 4070 selon son journal. Il y rapporte la présence des deux modèles ONNX et la détection du GPU par PyTorch et ONNX Runtime. Les autres caractéristiques du PC inventorié ci-dessus ne sont pas attribuées à cette machine sans confirmation. Le premier lancement avec webcam et les mesures de performance restent à faire. Voir le [journal du 10 novembre](journal/2026-11-10.md).
+Robin a installé **Deep-Live-Cam sur son PC** le 10 novembre. Les essais réalisés ensuite ont donné un résultat trop lent et de qualité insuffisante. Voir le [journal de la semaine](journal/2026-W46.md).
 
 ## Deux outils à comparer
 

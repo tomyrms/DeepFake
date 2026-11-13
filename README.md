@@ -18,9 +18,8 @@ Nous avons choisi de **tester une RTX 5090 de 32 Go de VRAM chez SwissGPU**, à 
 
 - [Planning et tableau de suivi](https://github.com/users/tomyrms/projects/3)
 - [Issues terminées](https://github.com/tomyrms/DeepFake/issues?q=is%3Aissue%20is%3Aclosed)
-- [Rapports hebdomadaires](docs/journal/README.md)
+- [Journal de travail](docs/journal/README.md)
 - [Organisation du travail](docs/organisation.md)
-- [Semaine 46 — du 9 au 15 novembre 2026](docs/journal/2026-W46.md)
 - [Recherche sur les outils et le matériel](docs/recherche-materiel.md)
 - [Rapport illustré — choix techniques et location GPU](docs/rapport-choix-techniques.md)
 
