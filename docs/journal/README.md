@@ -1,20 +1,20 @@
 # Journal de travail
 
-Nous regroupons désormais notre travail **par semaine**, du lundi au dimanche. Chaque bilan indique les dates, les contributions de Tomas et de Robin, les résultats obtenus et les difficultés rencontrées. Il sert à préparer le rapport et à expliquer nos choix aux professeurs.
+Un bilan **par semaine**, du lundi au dimanche, avec les dates, les contributions de Tomas et de Robin, les résultats et les décisions.
 
 ## Semaines
 
-- [Semaine 46 — du 9 au 15 novembre 2026](2026-W46.md) — bilan en cours, arrêté au 13 novembre : organisation, premiers essais et animation de portrait avec ComfyUI-LivePortraitKJ. [Notes techniques](2026-W46-notes-techniques.md).
+- [Semaine 46 — du 9 au 15 novembre 2026](2026-W46.md) — organisation du 10, recherches du 11, essais des 11 et 12. Bilan en cours au 13 novembre.
 
-Le [compte rendu du 10 novembre](2026-11-10.md) reste une annexe historique. Son contenu est repris dans le bilan de la semaine 46 ; les nouveaux résultats sont ajoutés au bilan hebdomadaire.
+Annexes : [FasterLivePortrait](2026-W46-fasterliveportrait.md) · [ComfyUI et LivePortrait](2026-W46-notes-techniques.md).
+
+Archive : [compte rendu du 10 novembre](2026-11-10.md), repris dans le bilan hebdomadaire.
 
 ## Compléter une semaine
 
-Créer un fichier `AAAA-WNN.md`, avec l’année et le numéro de semaine ISO, puis l’ajouter à l’index. Tant que la semaine n’est pas terminée, indiquer « bilan en cours » et la date du dernier travail intégré. Compléter le même fichier au fil des séances.
+Créer un fichier `AAAA-WNN.md` (année et semaine ISO), l’ajouter à l’index et le compléter au fil de la semaine. Indiquer « bilan en cours » et la date de mise à jour tant qu’il n’est pas terminé.
 
-Écrire à la première personne dans les sections de chaque auteur et préciser la date réelle du travail, même si les notes ont été transmises plus tard. Distinguer résultats observés, décisions et pistes non réalisées. Ne renseigner une durée ou une mesure que si elle a été relevée. Les détails d’installation peuvent être conservés dans une annexe liée au bilan.
-
-Le journal conserve les pistes de travail sans les transformer automatiquement en nouvelles tâches. Les informations d’accès et les données personnelles des participants restent hors de ce dépôt public.
+Écrire à la première personne, préciser la date réelle du travail et distinguer les résultats des pistes à tester. Garder les détails d’installation en annexe et ne pas inventer de durées ou de mesures.
 
 ## Modèle hebdomadaire
 
@@ -37,8 +37,7 @@ J’ai… Résultat, difficulté rencontrée et solution appliquée.
 
 ## Bilan de la semaine
 
-Ce qui fonctionne, les décisions prises et les points encore non vérifiés.
-Pistes envisagées, sans les présenter comme déjà réalisées.
+Résultats, décisions et points restant à vérifier.
 
 [Retour au journal](README.md)
 ```
