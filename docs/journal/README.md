@@ -1,38 +1,46 @@
 # Journal de travail
 
-Ce journal garde une trace des séances de Tomas et Robin : ce que nous voulions faire, ce qui s’est réellement passé et la suite à donner. Il servira à rédiger le rapport et à expliquer nos choix aux professeurs.
+Nous regroupons désormais notre travail **par semaine**, du lundi au dimanche. Chaque bilan indique les dates, les contributions de Tomas et de Robin, les résultats obtenus et les difficultés rencontrées. Il sert à préparer le rapport et à expliquer nos choix aux professeurs.
 
-## Séances
+## Semaines
 
-- [10 novembre 2026 — préparation et organisation du projet](2026-11-10.md)
+- [Semaine 46 — du 9 au 15 novembre 2026](2026-W46.md) — bilan en cours, arrêté au 13 novembre : organisation, premiers essais et animation de portrait avec ComfyUI-LivePortraitKJ. [Notes techniques](2026-W46-notes-techniques.md).
 
-## Ajouter une séance
+Le [compte rendu du 10 novembre](2026-11-10.md) reste une annexe historique. Son contenu est repris dans le bilan de la semaine 46 ; les nouveaux résultats sont ajoutés au bilan hebdomadaire.
 
-Créer un fichier nommé `AAAA-MM-JJ.md` dans ce dossier, reprendre le modèle ci-dessous et ajouter son lien à la liste des séances. Si nous travaillons séparément, préciser qui a fait quoi. Pour plusieurs interventions le même jour, compléter le même fichier en indiquant les auteurs.
+## Compléter une semaine
 
-Quelques phrases concrètes suffisent. Séparer un résultat observé d’une hypothèse ou d’un travail prévu, noter les difficultés et relier les issues, commits ou essais utiles. Renseigner les durées seulement si elles ont été relevées. Ce journal est public : les informations d’accès et les données personnelles des participants restent en dehors du dépôt.
+Créer un fichier `AAAA-WNN.md`, avec l’année et le numéro de semaine ISO, puis l’ajouter à l’index. Tant que la semaine n’est pas terminée, indiquer « bilan en cours » et la date du dernier travail intégré. Compléter le même fichier au fil des séances.
 
-## Modèle
+Écrire à la première personne dans les sections de chaque auteur et préciser la date réelle du travail, même si les notes ont été transmises plus tard. Distinguer résultats observés, décisions et pistes non réalisées. Ne renseigner une durée ou une mesure que si elle a été relevée. Les détails d’installation peuvent être conservés dans une annexe liée au bilan.
+
+Le journal conserve les pistes de travail sans les transformer automatiquement en nouvelles tâches. Les informations d’accès et les données personnelles des participants restent hors de ce dépôt public.
+
+## Modèle hebdomadaire
 
 ```markdown
-# Séance du AAAA-MM-JJ
+# Semaine NN du JJ au JJ mois AAAA
 
-Participants : Tomas / Robin — à adapter.
+**Tomas et Robin — bilan en cours, arrêté au JJ mois AAAA.**
 
-## Objectifs
+## Objectif de la semaine
 
-Ce que nous avions prévu pour cette séance.
+Nous voulions…
 
-## Notes
+## Tomas — date — sujet
 
-Travail réalisé, résultats observés, décisions et difficultés.
-Préciser l’auteur de chaque contribution si nécessaire.
-Ajouter les liens vers les issues, commits et sources utiles.
+J’ai… Résultat, difficulté rencontrée et solution appliquée.
 
-## Prochaine séance
+## Robin — date — sujet
 
-- Action concrète à poursuivre.
-- Point à vérifier ou décision à prendre.
+J’ai… Résultat, difficulté rencontrée et solution appliquée.
+
+## Bilan de la semaine
+
+Ce qui fonctionne, les décisions prises et les points encore non vérifiés.
+Pistes envisagées, sans les présenter comme déjà réalisées.
+
+[Retour au journal](README.md)
 ```
 
 [Retour au projet](../../README.md) · [Planning](https://github.com/users/tomyrms/projects/3)

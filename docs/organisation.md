@@ -1,22 +1,22 @@
 # Comment on travaille à deux
 
-Le [Project GitHub](https://github.com/users/tomyrms/projects/3) rassemble le planning et les tâches. Le dépôt contient la documentation et accueillera le code.
+Le [Project GitHub](https://github.com/users/tomyrms/projects/3) rassemble les travaux terminés. Nous construisons le Gantt au fur et à mesure des réalisations. Le dépôt contient la documentation et accueillera le code.
 
 ## Les trois vues
 
-- **Kanban** : les tâches dans les colonnes À faire, En cours et Terminé. Déplacer une carte quand son état change.
-- **Planning** : les huit grandes étapes et le jalon des portes ouvertes sur une frise. Les dates restent ajustables.
-- **Toutes les tâches** : la liste complète, y compris les étapes et le travail déjà terminé.
+- **Kanban** : les réalisations conservées dans la colonne Terminé.
+- **Planning** : les réalisations sur une frise, avec leurs dates réelles.
+- **Toutes les tâches** : la liste des travaux terminés.
 
-Une grande étape est une issue avec le label `epic`. Ses tâches sont reliées comme de vraies sous-issues. On peut ajouter une sous-issue depuis l’issue de l’étape concernée quand on connaît mieux le travail à faire.
+Les anciennes issues prévisionnelles ont été retirées. Les pistes à explorer restent dans le bilan hebdomadaire ; elles ne deviennent pas automatiquement des issues.
 
-Les champs **Start date** et **Target date** du Project pilotent le planning. Les dates reprises dans les descriptions et le PDF sont une photographie du 10 novembre : penser à les actualiser lors d’un changement important.
+Les champs **Start date** et **Target date** du Project servent à situer le travail réalisé. Ne pas inventer des dates ni une durée quand elles n’ont pas été relevées.
 
-## Après une séance
+## Chaque semaine
 
-1. Mettre les tâches commencées en **En cours**. Fermer celles qui sont réellement terminées, en notant le résultat ou un lien utile.
-2. Compléter le [journal](journal/README.md) avec quelques phrases : qui a fait quoi, problèmes, solutions et prochaine étape.
-3. Ajuster les dates si nécessaire. Les plages du planning représentent des périodes, pas des heures passées.
+1. Compléter le même [bilan hebdomadaire](journal/README.md) au fil du travail : contributions de Tomas et Robin, dates, résultats, problèmes et solutions.
+2. Conserver les détails d’installation dans une annexe technique si nécessaire. Un bilan en cours indique la date du dernier travail intégré.
+3. Ajouter au suivi les réalisations terminées, avec leur résultat et un lien vers le bilan. Mettre à jour le Gantt avec les dates connues.
 
 Un test qui détecte le GPU ne valide pas encore toute la démonstration webcam. Garder séparées les étapes réalisées et les vérifications restantes.
 
@@ -28,7 +28,7 @@ Robin doit encore être ajouté au dépôt et au Project avec son identifiant Gi
 
 ## Pour les professeurs
 
-La [synthèse avec Gantt](exports/synthese-et-gantt.pdf) tient sur une page. C’est un export figé : il faudra le régénérer pour un prochain bilan. Le journal et le rapport pourront aussi être transmis en PDF.
+Les [rapports hebdomadaires](journal/README.md) regroupent le travail par semaine, du lundi au dimanche. Le [rapport technique](rapport-choix-techniques.md) reste la synthèse des choix matériels. L’[ancienne synthèse avec Gantt](exports/synthese-et-gantt.pdf) est une archive du 10 novembre ; elle ne représente plus le suivi actuel.
 
 Le 15 janvier 2027 reste une date de portes ouvertes à confirmer avec l’école.
 

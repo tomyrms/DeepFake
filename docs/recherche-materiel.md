@@ -2,6 +2,8 @@
 
 Recherche préliminaire du **10 novembre 2026**, pour le projet scolaire de Tomas et Robin. Nous préparons une démonstration en direct par webcam pour les portes ouvertes, envisagées le **15 janvier 2027**, date à confirmer. **Le budget reste à déterminer.**
 
+> **Évolution au 13 novembre 2026 :** Deep-Live-Cam a été testé sur notre PC. Le résultat était trop lent, saccadé et de qualité insuffisante ; il remplaçait le visage sans transformer les cheveux ni le reste de la tête. Nous recherchons une solution de transformation générative de la tête entière et avons choisi de tester une **RTX 5090 de 32 Go de VRAM chez SwissGPU**. Le [rapport illustré](rapport-choix-techniques.md) présente ces résultats et ce choix. Le reste de cette note conserve la recherche initiale du 10 novembre.
+
 ## Point de départ
 
 Le PC disponible possède un **Intel Core i7-13700HX**, une **NVIDIA GeForce RTX 4070 Laptop avec environ 8 Go de VRAM** et environ **32 Go de RAM**, d’après l’inventaire réalisé. Il servira de première machine d’essai. Aucun débit ni délai d’affichage n’a encore été mesuré : sa capacité à assurer la démonstration en direct reste à vérifier.
