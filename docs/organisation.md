@@ -14,11 +14,8 @@ Les champs **Start date** et **Target date** du Project servent à situer le tra
 
 ## Chaque semaine
 
-1. Compléter le même [bilan hebdomadaire](journal/README.md) au fil du travail : contributions de Tomas et Robin, dates, résultats, problèmes et solutions.
-2. Conserver les détails d’installation dans une annexe technique si nécessaire. Un bilan en cours indique la date du dernier travail intégré.
-3. Ajouter au suivi les réalisations terminées, avec leur résultat et un lien vers le bilan. Mettre à jour le Gantt avec les dates connues.
-
-Un test qui détecte le GPU ne valide pas encore toute la démonstration webcam. Garder séparées les étapes réalisées et les vérifications restantes.
+1. Compléter le [journal de travail](journal/README.md) : une page par semaine, quelques lignes par jour, sans détails techniques.
+2. Ajouter les tâches terminées au suivi et au Gantt, avec les dates connues.
 
 ## Pour le code et les documents
 
