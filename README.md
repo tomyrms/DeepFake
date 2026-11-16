@@ -21,7 +21,7 @@ L’essai de JoyAI sur le serveur doit encore confirmer le rendu, la fluidité e
 - [Journal de travail](docs/journal/README.md)
 - [Documentation technique](docs/documentation-technique/README.md)
 - [Planning et tableau de suivi](https://github.com/users/tomyrms/projects/3)
-- [Issues terminées](https://github.com/tomyrms/DeepFake/issues?q=is%3Aissue%20is%3Aclosed)
+- [Issues](https://github.com/tomyrms/DeepFake/issues)
 - [Organisation du travail](docs/organisation.md)
 
-Le journal contient une page par semaine. Nous ajoutons les tâches au suivi et au Gantt une fois qu’elles sont terminées.
+Le journal contient une page par semaine. Les issues suivent le travail terminé et les prochaines tâches choisies. Le Gantt garde les réalisations, avec leurs dates connues.

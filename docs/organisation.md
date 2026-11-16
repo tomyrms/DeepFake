@@ -1,14 +1,14 @@
 # Comment on travaille à deux
 
-Nous suivons les travaux terminés dans le [Project GitHub](https://github.com/users/tomyrms/projects/3) et complétons le Gantt au fil des réalisations. Le dépôt contient la documentation et accueillera le code.
+Nous suivons le travail dans le [Project GitHub](https://github.com/users/tomyrms/projects/3) et complétons le Gantt au fil des réalisations. Le dépôt contient la documentation et accueillera le code.
 
 ## Les trois vues
 
-- Kanban : les travaux réalisés, dans la colonne Terminé.
+- Kanban : les tâches à faire, en cours et terminées.
 - Planning : les mêmes travaux sur une frise, avec leurs dates réelles.
-- Toutes les tâches : la liste des travaux terminés.
+- Toutes les tâches : la liste des issues suivies.
 
-Nous avons retiré les anciennes issues prévisionnelles. Les pistes à explorer restent dans le bilan hebdomadaire, sans créer d’issue pour chacune.
+Nous avons retiré les anciennes issues prévisionnelles. Nous créons une issue pour une prochaine tâche quand nous décidons de la faire, comme les captures vidéo. Le Gantt reste limité aux travaux terminés.
 
 Les champs Start date et Target date du Project indiquent les dates du travail réalisé. Nous renseignons uniquement les dates et les durées que nous avons relevées.
 
@@ -21,7 +21,7 @@ Les champs Start date et Target date du Project indiquent les dates du travail r
 
 Pour une modification, nous créons une branche courte, puis une pull request vers `main`, avec un lien vers l’issue concernée. L’autre personne peut relire avant la fusion.
 
-Il reste à ajouter Robin au dépôt et au Project avec son identifiant GitHub. Le dépôt est public et le Project reste privé. Nous gardons les modèles, les photos sources, les enregistrements et les informations d’accès hors du dépôt.
+Il reste à ajouter Robin au dépôt et au Project avec son identifiant GitHub. Le dépôt et le Project sont publics. Nous gardons les modèles, les photos sources, les vidéos brutes et les informations d’accès hors du dépôt. Les GIF retenus pour la démonstration pourront être ajoutés après vérification de leur contenu.
 
 ## Pour les professeurs
 
