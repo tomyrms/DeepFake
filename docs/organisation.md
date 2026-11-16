@@ -21,7 +21,7 @@ Les champs Start date et Target date du Project indiquent les dates du travail r
 
 Pour une modification, nous créons une branche courte, puis une pull request vers `main`, avec un lien vers l’issue concernée. L’autre personne peut relire avant la fusion.
 
-Il reste à ajouter Robin au dépôt et au Project avec son identifiant GitHub. Le dépôt et le Project sont publics. Nous gardons les modèles, les photos sources, les vidéos brutes et les informations d’accès hors du dépôt. Les GIF retenus pour la démonstration pourront être ajoutés après vérification de leur contenu.
+Robin a déjà accès au dépôt et au Project GitHub. Le dépôt et le Project sont publics. Nous gardons les modèles, les photos sources, les vidéos brutes et les informations d’accès hors du dépôt. Les GIF retenus pour la démonstration pourront être ajoutés après vérification de leur contenu.
 
 ## Pour les professeurs
 
