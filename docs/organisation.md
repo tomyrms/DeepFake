@@ -1,32 +1,32 @@
 # Comment on travaille à deux
 
-Le [Project GitHub](https://github.com/users/tomyrms/projects/3) rassemble les travaux terminés. Nous construisons le Gantt au fur et à mesure des réalisations. Le dépôt contient la documentation et accueillera le code.
+Nous suivons les travaux terminés dans le [Project GitHub](https://github.com/users/tomyrms/projects/3) et complétons le Gantt au fil des réalisations. Le dépôt contient la documentation et accueillera le code.
 
 ## Les trois vues
 
-- **Kanban** : les réalisations conservées dans la colonne Terminé.
-- **Planning** : les réalisations sur une frise, avec leurs dates réelles.
-- **Toutes les tâches** : la liste des travaux terminés.
+- Kanban : les travaux réalisés, dans la colonne Terminé.
+- Planning : les mêmes travaux sur une frise, avec leurs dates réelles.
+- Toutes les tâches : la liste des travaux terminés.
 
-Les anciennes issues prévisionnelles ont été retirées. Les pistes à explorer restent dans le bilan hebdomadaire ; elles ne deviennent pas automatiquement des issues.
+Nous avons retiré les anciennes issues prévisionnelles. Les pistes à explorer restent dans le bilan hebdomadaire, sans créer d’issue pour chacune.
 
-Les champs **Start date** et **Target date** du Project servent à situer le travail réalisé. Ne pas inventer des dates ni une durée quand elles n’ont pas été relevées.
+Les champs Start date et Target date du Project indiquent les dates du travail réalisé. Nous renseignons uniquement les dates et les durées que nous avons relevées.
 
 ## Chaque semaine
 
-1. Compléter le [journal de travail](journal/README.md) : une page par semaine, quelques lignes par jour, sans détails techniques.
-2. Ajouter les tâches terminées au suivi et au Gantt, avec les dates connues.
+1. Nous complétons le [journal de travail](journal/README.md) : une page par semaine, quelques lignes par jour, sans détails techniques.
+2. Nous ajoutons les tâches terminées au suivi et au Gantt, avec les dates connues.
 
 ## Pour le code et les documents
 
-Créer une branche courte pour une modification, puis une pull request vers `main`. L’autre personne peut relire avant la fusion. Relier l’issue concernée dans la description de la pull request.
+Pour une modification, nous créons une branche courte, puis une pull request vers `main`, avec un lien vers l’issue concernée. L’autre personne peut relire avant la fusion.
 
-Robin doit encore être ajouté au dépôt et au Project avec son identifiant GitHub. Le dépôt est public ; le Project reste privé. Les modèles, les photos sources, les enregistrements et les informations d’accès restent hors du dépôt.
+Il reste à ajouter Robin au dépôt et au Project avec son identifiant GitHub. Le dépôt est public et le Project reste privé. Nous gardons les modèles, les photos sources, les enregistrements et les informations d’accès hors du dépôt.
 
 ## Pour les professeurs
 
-Les [rapports hebdomadaires](journal/README.md) regroupent le travail par semaine, du lundi au dimanche. Le [rapport technique](rapport-choix-techniques.md) reste la synthèse des choix matériels. L’[ancienne synthèse avec Gantt](exports/synthese-et-gantt.pdf) est une archive du 10 novembre ; elle ne représente plus le suivi actuel.
+Les professeurs peuvent suivre notre travail dans les [rapports hebdomadaires](journal/README.md), du lundi au dimanche, et consulter nos choix matériels dans le [rapport technique](documentation-technique/rapport-choix-techniques.md).
 
-Le 15 janvier 2027 reste une date de portes ouvertes à confirmer avec l’école.
+La date des portes ouvertes, le 15 janvier 2027, reste à confirmer avec l’école.
 
 [Retour au projet](../README.md)
