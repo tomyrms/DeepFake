@@ -1,26 +1,27 @@
-# DeepFake — projet scolaire
+# DeepFake, projet scolaire
 
-Nous sommes **Tomas et Robin**. Nous préparons une démonstration de transformation de la tête, cheveux compris, en direct par webcam. Les participants seront consentants et les images clairement présentées comme synthétiques.
+Nous sommes Tomas et Robin. Nous préparons une démonstration par webcam qui transforme la tête d’une personne, cheveux compris. Les participants seront consentants et le public saura que les images sont générées par IA.
 
-La présentation est envisagée pour les portes ouvertes du **15 janvier 2027, date à confirmer avec l’école**.
+La présentation est envisagée pour les portes ouvertes du 15 janvier 2027. La date reste à confirmer avec l’école.
 
-## Où en sommes-nous ?
+## Où nous en sommes
 
-**Bilan au 13 novembre 2026 :**
+Nous avons retenu JoyAI-Video-Edit après un essai de sa démo sur Hugging Face. Nous voulons maintenant l’installer sur une RTX 5090 de 32 Go de VRAM louée chez SwissGPU. Le [rapport sur les choix techniques](docs/documentation-technique/rapport-choix-techniques.md) explique les besoins du modèle, les autres solutions étudiées et le coût du test.
 
-- **Deep-Live-Cam :** trop lent, saccadé et de qualité insuffisante sur notre PC. Il remplace le visage, sans transformer les cheveux ni le reste de la tête.
-- **FasterLivePortrait, les 11 et 12 novembre :** installation et essais vidéo, interface web et webcam. Environ 14 images/s sur la vidéo d’exemple ; le résultat ne correspond pas à notre objectif.
-- **ComfyUI-LivePortraitKJ, le 12 novembre :** Robin a obtenu une photo animée par la webcam. La voix et OBS restent à tester.
+Les premiers essais nous ont permis de préciser ce que nous cherchons :
 
-Nous avons choisi de **tester une RTX 5090 de 32 Go de VRAM chez SwissGPU**, à **0,55 CHF/h hors électricité et frais**. Il reste à sélectionner un logiciel adapté et à mesurer la qualité, la fluidité et le délai. Une carte plus puissante ne change pas les fonctions du logiciel.
+- Deep-Live-Cam était trop lent et saccadé sur notre PC. Il remplaçait le visage, sans transformer les cheveux ni le reste de la tête.
+- Nous avons essayé FasterLivePortrait les 11 et 12 novembre, en vidéo, dans son interface web et avec la webcam. La vidéo d’exemple tournait autour de 14 images/s, mais le résultat ne correspondait pas à notre objectif.
+- Le 12 novembre, Robin a animé une photo avec la webcam dans ComfyUI-LivePortraitKJ. La voix et OBS restent à tester.
+
+L’essai de JoyAI sur le serveur doit encore confirmer le rendu, la fluidité et le délai depuis l’école.
 
 ## Suivre le projet
 
+- [Journal de travail](docs/journal/README.md)
+- [Documentation technique](docs/documentation-technique/README.md)
 - [Planning et tableau de suivi](https://github.com/users/tomyrms/projects/3)
 - [Issues terminées](https://github.com/tomyrms/DeepFake/issues?q=is%3Aissue%20is%3Aclosed)
-- [Journal de travail](docs/journal/README.md)
 - [Organisation du travail](docs/organisation.md)
-- [Recherche sur les outils et le matériel](docs/recherche-materiel.md)
-- [Rapport illustré — choix techniques et location GPU](docs/rapport-choix-techniques.md)
 
-Les rapports sont regroupés **par semaine**. Les issues et le Gantt contiennent uniquement le travail terminé et seront complétés au fur et à mesure. L’[export PDF du 10 novembre](docs/exports/synthese-et-gantt.pdf) reste une archive de l’ancien planning.
+Le journal contient une page par semaine. Nous ajoutons les tâches au suivi et au Gantt une fois qu’elles sont terminées.
