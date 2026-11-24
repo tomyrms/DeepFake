@@ -118,11 +118,13 @@ L'IA invente une partie de l'image. Deep-Live-Cam remplace seulement le visage, 
 
 #### Installation (Windows)
 
-Le README propose trois façons de l'installer. Un pack Windows tout-en-un, une image Docker, ou une installation à la main que l'auteur n'a testée que sous Linux. J'ai pris le pack Windows. Il contient déjà Python, CUDA et TensorRT, donc je n'ai rien eu à compiler.
+Le README propose trois façons de l'installer. Un pack Windows tout-en-un, une image Docker, ou une installation à la main que l'auteur n'a testée que sous Linux. J'ai pris le pack Windows. Il contient déjà Python, CUDA et TensorRT, donc je n'ai rien eu à compiler, et il n'y a pas besoin d'installer CUDA sur Windows.
 
-1. J'ai téléchargé `FasterLivePortrait-windows-20241228.zip` depuis Hugging Face.
-2. L'outil `tar` de Windows n'a pas réussi à ouvrir le zip, parce qu'il gère mal les fichiers de plus de 4 Go. Je l'ai donc décompressé avec Python (module `zipfile`). J'ai obtenu 66 370 fichiers dans `D:\FasterLivePortrait-windows`. Le pack contient un `venv` Python 3.10 déjà prêt (torch 2.4 avec CUDA 12.1, TensorRT 9.0), les modèles ONNX et ffmpeg.
-3. J'ai lancé `scripts\all_onnx2trt.bat`. Il a converti les 15 modèles en moteurs TensorRT en environ 50 minutes, sans erreur.
+1. J'ai téléchargé `FasterLivePortrait-windows-20241228.zip` (9,35 Go) depuis Hugging Face, le lien est donné sur la page des versions du dépôt GitHub. Pour aller plus vite, je l'ai téléchargé en 8 morceaux en parallèle, qui reprennent tout seuls si la connexion coupe. La vitesse dépend surtout du Wi-Fi : environ 2 Mo/s sur le premier réseau, jusqu'à 14 Mo/s sur un autre.
+2. L'outil `tar` de Windows gère mal les zip de plus de 4 Go, donc je l'ai décompressé avec Python (module `zipfile`). J'ai obtenu 66 370 fichiers dans `D:\FasterLivePortrait-windows`. Le pack contient un `venv` Python 3.10 déjà prêt (torch 2.4 avec CUDA 12.1, TensorRT 9.0), les modèles ONNX et ffmpeg.
+3. J'ai vérifié que le `venv` voit bien la carte graphique : `torch.cuda.is_available()` renvoie `True` et la RTX 4070 est détectée.
+4. J'ai converti les modèles ONNX en moteurs TensorRT avec `scripts\onnx2trt.py`. Le script `scripts\all_onnx2trt.bat` convertit 15 modèles, dont 6 pour les animaux, qui ne servent qu'avec l'option `--animal`. Je n'ai converti que les 9 modèles humains, ce qui a pris environ 15 minutes au lieu de 50.
+5. J'ai corrigé trois bugs du pack sous Windows (voir « Problèmes rencontrés » plus bas).
 
 Toute l'installation a été faite avec Claude Code.
 
@@ -134,17 +136,17 @@ Sur la vidéo d'exemple :
 venv\python.exe run.py --src_image assets\examples\source\s10.jpg --dri_video assets\examples\driving\d14.mp4 --cfg configs\trt_infer.yaml
 ```
 
-Chaque image prend environ 71 ms, donc à peu près 14 images par seconde. L'auteur annonce plus de 30 images par seconde, mais avec une RTX 3090 de bureau.
+Chaque image prend environ 40 ms, donc à peu près 25 images par seconde. Lors de mon premier essai, j'avais mesuré 71 ms (14 images par seconde). L'auteur annonce plus de 30 images par seconde, mais avec une RTX 3090 de bureau. Les vidéos générées sont dans le dossier `results`.
 
 La page web se lance avec `webui.bat`. Elle s'ouvre sur http://127.0.0.1:7890/, alors que le README indique le port 9870.
 
 En direct avec la webcam, depuis le dossier `D:\FasterLivePortrait-windows` :
 
 ```
-camera.bat --src_image C:\Users\robin\Downloads\test1.jpg --paste_back
+camera.bat --src_image mbappe.jpg --paste_back
 ```
 
-Avec `--paste_back`, on voit toute la photo et pas seulement le visage découpé. On quitte avec la touche Q dans la fenêtre « Render ».
+Avec `--paste_back`, on voit toute la photo et pas seulement le visage découpé. On quitte avec la touche Q dans la fenêtre « Render ». Pour le GIF, j'ai filmé la fenêtre « Render » avec l'enregistreur de Windows (Win + Alt + R), puis je l'ai converti avec ffmpeg.
 
 #### Problèmes rencontrés
 
@@ -158,7 +160,7 @@ Il ne faut pas lancer `update.bat`, parce qu'il fait un `git reset --hard` et ef
 
 #### Limites connues
 
-Le logiciel marche, mais il ne fait pas ce que nous voulons : il fait bouger une photo, alors que nous voulons transformer la personne filmée. Les 14 images par seconde ont été mesurées sur la vidéo d'exemple, pas avec la webcam.
+Le logiciel marche, mais il ne fait pas ce que nous voulons : il fait bouger une photo, alors que nous voulons transformer la personne filmée. Les 25 images par seconde ont été mesurées sur la vidéo d'exemple, pas avec la webcam.
 
 ### 4.4 ComfyUI avec LivePortrait
 
