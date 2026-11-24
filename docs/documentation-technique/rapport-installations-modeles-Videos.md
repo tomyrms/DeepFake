@@ -21,7 +21,7 @@ Les trois outils sont gratuits et open source. Deep-Live-Cam et StreamDiffusionV
 
 Deep-Live-Cam remplace mon visage sur la webcam par celui d'une photo, en temps réel et sans entraînement. Ce n'est pas un modèle d'IA générative, c'est un algorithme. Je l'ai choisi parmi quatre pistes, dont FaceFusion, parce qu'une seule photo suffit.
 
-![[Deep_live_cam.gif]]
+![Deep-Live-Cam](../images/Deep_live_cam.gif)
 
 J'ai utilisé le dépôt officiel `github.com/hacksider/Deep-Live-Cam`.
 
@@ -35,13 +35,13 @@ Il lui faut Linux, une carte NVIDIA et les pilotes CUDA. Sous Windows, il faut d
 
 Sur la vidéo ci-dessous, on voit que ça rame et que ça plante souvent. Notre PC n'est pas assez puissant. J'avais aussi demandé la tête du footballeur Kylian Mbappé, et l'IA a complètement inventé le visage.
 
-![[wan2.1streamdiffusion.gif]]
+![Wan 2.1 avec StreamDiffusionV2](../images/wan2.1streamdiffusion.gif)
 
 ### 3.3 JoyAI-Video-Edit
 
 JoyAI-Video-Edit est un modèle gratuit et open source de l'entreprise chinoise JD. On lui donne une vidéo et une consigne écrite, et il modifie la vidéo en direct. Le modèle est très gros (16 milliards de paramètres). Nous allons le faire tourner sur une RTX 5090, donc nous n'aurons sans doute pas la qualité annoncée par ses auteurs (720p à environ 30 images par seconde). Le modèle se télécharge sur Hugging Face et le code pour le lancer est sur GitHub.
 
-![[JoyAI_Video_Edit.gif]]
+![JoyAI-Video-Edit](../images/JoyAI_Video_Edit.gif)
 
 ## 4. Installation et limites
 
