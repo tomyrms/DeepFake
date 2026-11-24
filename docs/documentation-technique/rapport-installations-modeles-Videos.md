@@ -91,7 +91,7 @@ L'outil remplace les traits du visage, mais pas les cheveux ni la forme de la t�
 
 1. J'ai installé WSL2 et Ubuntu avec `wsl --install -d Ubuntu` (PowerShell en administrateur), puis j'ai redémarré et créé un utilisateur Ubuntu.
 2. Depuis Ubuntu, j'ai vérifié le GPU : `nvidia-smi` affiche bien la RTX 4070 (8 188 Mo).
-3. Pour la suite, j'ai utilisé trois scripts que Claude m'a générés à partir du dépôt GitHub :
+3. Pour la suite, j'ai utilisé trois scripts que Claude m'a générés à partir du dépôt GitHub. Ils sont dans le dossier [`scripts/streamdiffusionv2`](../../scripts/streamdiffusionv2) du dépôt :
    - `1_installer_wsl.ps1` installe WSL2 et Ubuntu.
    - `2_setup_streamdiffusionv2.sh` installe Miniconda, crée l'environnement Python 3.10, clone le dépôt, installe le paquet, télécharge les modèles et installe Node.js 18.
    - `3_lancer_demo_webcam.sh` active l'environnement, télécharge le décodeur léger TAEHV, construit l'interface web, arrête les anciens processus et lance la démo.
