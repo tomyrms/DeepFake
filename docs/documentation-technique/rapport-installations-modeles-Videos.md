@@ -41,11 +41,13 @@ Sur la vidéo ci-dessous, on voit que ça rame et que ça plante souvent. Notre 
 
 ### 3.3 FasterLivePortrait
 
-[FasterLivePortrait](https://github.com/warmshao/FasterLivePortrait) est une version accélérée de LivePortrait. Il convertit les modèles ONNX en moteurs TensorRT optimisés pour la carte graphique. Il a trois modes : vidéo vers vidéo (`run.py`), interface web (`webui.bat`) et webcam en direct (`camera.bat`).
+[FasterLivePortrait](https://github.com/warmshao/FasterLivePortrait) est une version plus rapide de LivePortrait. Il fait bouger une photo avec les mouvements d'une vidéo ou de ma webcam. Pour aller plus vite, il convertit les modèles ONNX en moteurs TensorRT adaptés à ma carte graphique. On peut l'utiliser de trois façons : sur une vidéo (`run.py`), dans une page web (`webui.bat`) ou en direct avec la webcam (`camera.bat`).
+
+![FasterLivePortrait](../images/fasterliveportrait.gif)
 
 ### 3.4 ComfyUI avec LivePortrait
 
-ComfyUI est une interface à nœuds pour faire tourner des modèles d'images et de vidéo en local. LivePortrait y anime une photo fixe avec mes mouvements captés par la webcam. J'ai utilisé le pack de nœuds [ComfyUI-LivePortraitKJ](https://github.com/kijai/ComfyUI-LivePortraitKJ) de kijai. Il affiche le résultat presque en temps réel, avec un retard annoncé d'environ 80 à 100 ms, et fournit un workflow d'exemple pour la webcam.
+ComfyUI est un logiciel où l'on relie des blocs (des nœuds) pour faire tourner des modèles d'image et de vidéo en local. J'y ai ajouté [ComfyUI-LivePortraitKJ](https://github.com/kijai/ComfyUI-LivePortraitKJ), un pack de nœuds créé par kijai. Il fait bouger une photo avec mes mouvements captés par la webcam, presque en direct : l'auteur annonce un retard d'environ 80 à 100 ms. Le pack contient un workflow d'exemple prêt pour la webcam.
 
 ### 3.5 JoyAI-Video-Edit
 
@@ -116,76 +118,78 @@ L'IA invente une partie de l'image. Deep-Live-Cam remplace seulement le visage, 
 
 #### Installation (Windows)
 
-Le README propose trois méthodes : un pack Windows tout-en-un, une image Docker ou une installation manuelle testée seulement sous Linux. J'ai pris le pack Windows, parce qu'il contient déjà Python, CUDA et TensorRT et évite de compiler TensorRT soi-même.
+Le README propose trois façons de l'installer. Un pack Windows tout-en-un, une image Docker, ou une installation à la main que l'auteur n'a testée que sous Linux. J'ai pris le pack Windows. Il contient déjà Python, CUDA et TensorRT, donc je n'ai rien eu à compiler.
 
-1. J'ai téléchargé `FasterLivePortrait-windows-20241228.zip` (9,35 Go) depuis Hugging Face. La connexion a coupé à 2,9 Go, alors j'ai repris le téléchargement avec `curl -C -` dans une boucle qui relance toute seule.
-2. Le `tar` de Windows a refusé le zip, car il gère mal les zip de plus de 4 Go. Je l'ai décompressé avec le module `zipfile` de Python : 66 370 fichiers dans `D:\FasterLivePortrait-windows`. Le pack contient un `venv` Python 3.10 déjà prêt (torch 2.4 avec CUDA 12.1, TensorRT 9.0), les modèles ONNX et ffmpeg.
-3. J'ai lancé `scripts\all_onnx2trt.bat`, qui a converti les 15 modèles en moteurs TensorRT en environ 50 minutes, sans erreur.
+1. J'ai téléchargé `FasterLivePortrait-windows-20241228.zip` depuis Hugging Face.
+2. L'outil `tar` de Windows n'a pas réussi à ouvrir le zip, parce qu'il gère mal les fichiers de plus de 4 Go. Je l'ai donc décompressé avec Python (module `zipfile`). J'ai obtenu 66 370 fichiers dans `D:\FasterLivePortrait-windows`. Le pack contient un `venv` Python 3.10 déjà prêt (torch 2.4 avec CUDA 12.1, TensorRT 9.0), les modèles ONNX et ffmpeg.
+3. J'ai lancé `scripts\all_onnx2trt.bat`. Il a converti les 15 modèles en moteurs TensorRT en environ 50 minutes, sans erreur.
+
+Toute l'installation a été faite avec Claude Code.
 
 #### Tests
 
-Vidéo d'exemple :
+Sur la vidéo d'exemple :
 
 ```
 venv\python.exe run.py --src_image assets\examples\source\s10.jpg --dri_video assets\examples\driving\d14.mp4 --cfg configs\trt_infer.yaml
 ```
 
-Chaque image prend environ 71 ms, soit à peu près 14 images par seconde. L'auteur annonce plus de 30 images par seconde, mais sur une RTX 3090 de bureau.
+Chaque image prend environ 71 ms, donc à peu près 14 images par seconde. L'auteur annonce plus de 30 images par seconde, mais avec une RTX 3090 de bureau.
 
-L'interface web se lance avec `webui.bat` et s'ouvre sur http://127.0.0.1:7890/ (et pas sur le port 9870 indiqué dans le README).
+La page web se lance avec `webui.bat`. Elle s'ouvre sur http://127.0.0.1:7890/, alors que le README indique le port 9870.
 
-Webcam en direct, depuis le dossier `D:\FasterLivePortrait-windows` :
+En direct avec la webcam, depuis le dossier `D:\FasterLivePortrait-windows` :
 
 ```
 camera.bat --src_image C:\Users\robin\Downloads\test1.jpg --paste_back
 ```
 
-`--paste_back` affiche la photo entière au lieu du visage recadré seul. Dans la fenêtre « Render », Q quitte le programme.
+Avec `--paste_back`, on voit toute la photo et pas seulement le visage découpé. On quitte avec la touche Q dans la fenêtre « Render ».
 
 #### Problèmes rencontrés
 
 | Problème | Cause | Correction |
 |---|---|---|
-| Plantage à la fin, au moment d'ajouter le son (`FileNotFoundError`) | Chemin relatif de ffmpeg mal lu par Windows | Chemin absolu dans `run.py`, `api.py` et `src\pipelines\gradio_live_portrait_pipeline.py` |
-| Aucune image lue depuis la webcam (`inference median time: nan`) | Le pilote vidéo par défaut (MSMF) ouvre la webcam mais ne lit rien | Webcam ouverte avec `cv2.VideoCapture(0, cv2.CAP_DSHOW)` dans `run.py` |
-| « no face » avec une photo dont le nom contient un espace | `camera.bat` ne mettait pas le chemin entre guillemets | Guillemets ajoutés dans `camera.bat`, photo renommée `test1.jpg` |
+| Le programme plantait à la fin, au moment d'ajouter le son (`FileNotFoundError`) | Windows ne trouvait pas ffmpeg avec le chemin relatif | Chemin complet vers ffmpeg dans `run.py`, `api.py` et `src\pipelines\gradio_live_portrait_pipeline.py` |
+| Aucune image ne venait de la webcam (`inference median time: nan`) | Le pilote vidéo par défaut (MSMF) ouvrait la webcam mais ne lisait rien | Webcam ouverte avec `cv2.VideoCapture(0, cv2.CAP_DSHOW)` dans `run.py` |
+| Message « no face » quand le nom de la photo contient un espace | `camera.bat` ne mettait pas le chemin entre guillemets | Guillemets ajoutés dans `camera.bat`, photo renommée `test1.jpg` |
 
-Il ne faut pas lancer `update.bat` : il fait un `git reset --hard` qui efface ces corrections.
+Il ne faut pas lancer `update.bat`, parce qu'il fait un `git reset --hard` et efface ces corrections.
 
 #### Limites connues
 
-Le logiciel fonctionne, mais le rendu ne correspond pas à notre objectif : il anime une photo au lieu de transformer la personne filmée. Les 14 images par seconde ont été mesurées sur la vidéo d'exemple, pas avec la webcam.
+Le logiciel marche, mais il ne fait pas ce que nous voulons : il fait bouger une photo, alors que nous voulons transformer la personne filmée. Les 14 images par seconde ont été mesurées sur la vidéo d'exemple, pas avec la webcam.
 
 ### 4.4 ComfyUI avec LivePortrait
 
 #### Installation (Windows)
 
-1. J'ai installé Comfy Desktop depuis comfy.org, en choisissant la carte NVIDIA.
-2. Dans le gestionnaire d'extensions de Comfy, j'ai installé `ComfyUI-LivePortraitKJ` et `ComfyUI-KJNodes` (ce dernier fournit le nœud de capture webcam), puis j'ai redémarré Comfy Desktop.
-3. J'ai glissé dans la fenêtre le workflow d'exemple « realtime » du dossier `custom_nodes\ComfyUI-LivePortraitKJ\examples`. Quand des nœuds manquaient (en rouge), je les ai installés depuis la fenêtre « Missing nodes », puis j'ai redémarré.
-4. Au premier lancement, les modèles se téléchargent seuls dans `models\liveportrait`.
+1. J'ai installé Comfy Desktop depuis comfy.org, en choisissant la version pour carte NVIDIA.
+2. Dans le gestionnaire d'extensions de Comfy, j'ai installé `ComfyUI-LivePortraitKJ` et `ComfyUI-KJNodes`, qui ajoute le nœud pour la webcam. Ensuite, j'ai redémarré Comfy Desktop.
+3. J'ai glissé dans la fenêtre le workflow d'exemple « realtime », qui se trouve dans `custom_nodes\ComfyUI-LivePortraitKJ\examples`. Il manquait des nœuds. Je les ai installés depuis la fenêtre « Missing nodes », puis j'ai redémarré.
+4. Au premier lancement, les modèles se téléchargent tout seuls dans `models\liveportrait`.
 
-La chaîne de nœuds : chargement des modèles, photo (`LoadImage`) et webcam (`Webcam Capture CV2`), détection du visage (`MediaPipeCropper`), `LivePortraitProcess`, puis `PreviewImage`.
+Les nœuds s'enchaînent ainsi : chargement des modèles, photo (`LoadImage`) et webcam (`Webcam Capture CV2`), détection du visage (`MediaPipeCropper`), `LivePortraitProcess`, puis affichage avec `PreviewImage`.
 
 #### Réglages utilisés
 
 | Nœud | Réglage |
 |---|---|
 | `DownloadAndLoadLivePortraitModels` | précision `fp16` |
-| `LivePortrait Load MediaPipeCropper` | device : CPU (à changer si l'image est saccadée) |
-| `Webcam Capture CV2` | `cam_index` 0 (passer à 1 si l'image est noire ou vient de la mauvaise caméra) |
-| `Screencap mss` | non relié, ignoré |
-| Lancement | « Run (Instant) » à côté du bouton Run, pour que le traitement tourne en boucle |
+| `LivePortrait Load MediaPipeCropper` | device : CPU (à changer si l'image saccade) |
+| `Webcam Capture CV2` | `cam_index` 0 (mettre 1 si l'image est noire ou vient de la mauvaise caméra) |
+| `Screencap mss` | pas relié, ignoré |
+| Lancement | « Run (Instant) », à côté du bouton Run, pour que le traitement tourne en boucle |
 
-J'ai choisi le détecteur MediaPipe, parce que la version InsightFace est compliquée à installer sous Windows. La photo doit être de face, bouche fermée, avec une expression neutre, un fond uni, les épaules visibles et aucun cheveu devant le visage.
+J'ai pris le détecteur de visage MediaPipe, parce que InsightFace est compliqué à installer sous Windows. La photo doit être prise de face, bouche fermée, sans expression, sur un fond uni, avec les épaules visibles et sans cheveux devant le visage.
 
 #### Problème rencontré
 
-Au premier lancement, le compteur « Total » est resté à 0 % pendant plus de 10 minutes. Le nœud de chargement des modèles les téléchargeait sans afficher de progression. Pour le vérifier, on regarde si la taille du dossier `models\liveportrait` augmente et on lit le panneau « Logs » de Comfy. Si rien ne bouge, on télécharge les modèles à la main.
+Au premier lancement, le compteur « Total » est resté bloqué à 0 % pendant plus de 10 minutes. En fait, le nœud téléchargeait les modèles sans montrer la progression. Pour le vérifier, il faut regarder si le dossier `models\liveportrait` grossit et lire le panneau « Logs » de Comfy. Si rien ne bouge, il faut télécharger les modèles à la main.
 
 #### Limites connues
 
-Comme FasterLivePortrait, l'outil anime une photo au lieu de transformer la personne filmée. Pour notre démo, nous voulons modifier la vidéo en direct à partir d'une consigne, ce que fait JoyAI-Video-Edit.
+Comme FasterLivePortrait, il fait bouger une photo au lieu de transformer la personne filmée. Pour notre démo, nous voulons modifier la vidéo en direct à partir d'une consigne écrite, et c'est ce que fait JoyAI-Video-Edit.
 
 ### 4.5 JoyAI-Video-Edit
 
