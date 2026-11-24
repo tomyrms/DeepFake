@@ -1,4 +1,4 @@
-# Rapport d'installation et de tests : Deep-Live-Cam, JoyAI-Video-Edit, et Wan 2.1 avec StreamDiffusionV2
+# Rapport d'installation et de tests : Deep-Live-Cam, Wan 2.1 avec StreamDiffusionV2, FasterLivePortrait, ComfyUI-LivePortraitKJ et JoyAI-Video-Edit
 
 ## 1. Résumé
 
@@ -6,9 +6,11 @@
 | --------------------------- | ------------------------------------------------------------------------------------- |
 | Deep-Live-Cam               | Échange de visage en temps réel avec une seule photo source                           |
 | Wan 2.1 + StreamDiffusionV2 | Transformation vidéo en direct de la webcam, guidée par un texte                      |
+| FasterLivePortrait          | Animation d'une photo avec une vidéo ou la webcam, accélérée avec TensorRT            |
+| ComfyUI-LivePortraitKJ      | Animation d'une photo avec les mouvements de ma webcam, dans ComfyUI                  |
 | JoyAI-Video-Edit            | Modification vidéo en temps réel guidée par un texte (testé en démo sur Hugging Face) |
 
-Les trois outils sont gratuits et open source. Deep-Live-Cam et StreamDiffusionV2 tournent en local, sans rien envoyer sur Internet. JoyAI-Video-Edit, je l'ai seulement testé avec la démo Hugging Face, mais c'est lui que nous allons installer en local. Deep-Live-Cam s'installe sous Windows. StreamDiffusionV2 demande Linux, donc chez moi il tourne dans WSL2 (Ubuntu). Avec mes 8 Go de VRAM, il est à la limite de ce que ma carte supporte, et la mémoire a été mon plus gros problème.
+Les cinq outils sont gratuits et open source. Deep-Live-Cam, StreamDiffusionV2, FasterLivePortrait et ComfyUI-LivePortraitKJ tournent en local, sans rien envoyer sur Internet. JoyAI-Video-Edit, je l'ai seulement testé avec la démo Hugging Face, mais c'est lui que nous allons installer en local. Deep-Live-Cam s'installe sous Windows. StreamDiffusionV2 demande Linux, donc chez moi il tourne dans WSL2 (Ubuntu). Avec mes 8 Go de VRAM, il est à la limite de ce que ma carte supporte, et la mémoire a été mon plus gros problème. FasterLivePortrait et ComfyUI-LivePortraitKJ reposent tous les deux sur LivePortrait : ils fonctionnent sur mon PC, mais ils animent une photo au lieu de transformer la personne filmée.
 
 ## 2. Matériel et environnement
 
@@ -37,7 +39,15 @@ Sur la vidéo ci-dessous, on voit que ça rame et que ça plante souvent. Notre 
 
 ![Wan 2.1 avec StreamDiffusionV2](../images/wan2.1streamdiffusion.gif)
 
-### 3.3 JoyAI-Video-Edit
+### 3.3 FasterLivePortrait
+
+[FasterLivePortrait](https://github.com/warmshao/FasterLivePortrait) est une version accélérée de LivePortrait. Il convertit les modèles ONNX en moteurs TensorRT optimisés pour la carte graphique. Il a trois modes : vidéo vers vidéo (`run.py`), interface web (`webui.bat`) et webcam en direct (`camera.bat`).
+
+### 3.4 ComfyUI avec LivePortrait
+
+ComfyUI est une interface à nœuds pour faire tourner des modèles d'images et de vidéo en local. LivePortrait y anime une photo fixe avec mes mouvements captés par la webcam. J'ai utilisé le pack de nœuds [ComfyUI-LivePortraitKJ](https://github.com/kijai/ComfyUI-LivePortraitKJ) de kijai. Il affiche le résultat presque en temps réel, avec un retard annoncé d'environ 80 à 100 ms, et fournit un workflow d'exemple pour la webcam.
+
+### 3.5 JoyAI-Video-Edit
 
 JoyAI-Video-Edit est un modèle gratuit et open source de l'entreprise chinoise JD. On lui donne une vidéo et une consigne écrite, et il modifie la vidéo en direct. Le modèle est très gros (16 milliards de paramètres). Nous allons le faire tourner sur une RTX 5090, donc nous n'aurons sans doute pas la qualité annoncée par ses auteurs (720p à environ 30 images par seconde). Le modèle se télécharge sur Hugging Face et le code pour le lancer est sur GitHub.
 
@@ -102,7 +112,82 @@ C'est très lent. Après le lancement dans la page web, j'attendais 3 à 4 minut
 
 L'IA invente une partie de l'image. Deep-Live-Cam remplace seulement le visage, alors que StreamDiffusionV2 recrée toute l'image à partir de ma webcam et du prompt. Le visage, les cheveux, les vêtements et le fond peuvent donc changer d'une image à l'autre, et le résultat ne correspond pas toujours au prompt. Je ne peux pas vraiment choisir le visage obtenu.
 
-### 4.3 JoyAI-Video-Edit
+### 4.3 FasterLivePortrait
+
+#### Installation (Windows)
+
+Le README propose trois méthodes : un pack Windows tout-en-un, une image Docker ou une installation manuelle testée seulement sous Linux. J'ai pris le pack Windows, parce qu'il contient déjà Python, CUDA et TensorRT et évite de compiler TensorRT soi-même.
+
+1. J'ai téléchargé `FasterLivePortrait-windows-20241228.zip` (9,35 Go) depuis Hugging Face. La connexion a coupé à 2,9 Go, alors j'ai repris le téléchargement avec `curl -C -` dans une boucle qui relance toute seule.
+2. Le `tar` de Windows a refusé le zip, car il gère mal les zip de plus de 4 Go. Je l'ai décompressé avec le module `zipfile` de Python : 66 370 fichiers dans `D:\FasterLivePortrait-windows`. Le pack contient un `venv` Python 3.10 déjà prêt (torch 2.4 avec CUDA 12.1, TensorRT 9.0), les modèles ONNX et ffmpeg.
+3. J'ai lancé `scripts\all_onnx2trt.bat`, qui a converti les 15 modèles en moteurs TensorRT en environ 50 minutes, sans erreur.
+
+#### Tests
+
+Vidéo d'exemple :
+
+```
+venv\python.exe run.py --src_image assets\examples\source\s10.jpg --dri_video assets\examples\driving\d14.mp4 --cfg configs\trt_infer.yaml
+```
+
+Chaque image prend environ 71 ms, soit à peu près 14 images par seconde. L'auteur annonce plus de 30 images par seconde, mais sur une RTX 3090 de bureau.
+
+L'interface web se lance avec `webui.bat` et s'ouvre sur http://127.0.0.1:7890/ (et pas sur le port 9870 indiqué dans le README).
+
+Webcam en direct, depuis le dossier `D:\FasterLivePortrait-windows` :
+
+```
+camera.bat --src_image C:\Users\robin\Downloads\test1.jpg --paste_back
+```
+
+`--paste_back` affiche la photo entière au lieu du visage recadré seul. Dans la fenêtre « Render », Q quitte le programme.
+
+#### Problèmes rencontrés
+
+| Problème | Cause | Correction |
+|---|---|---|
+| Plantage à la fin, au moment d'ajouter le son (`FileNotFoundError`) | Chemin relatif de ffmpeg mal lu par Windows | Chemin absolu dans `run.py`, `api.py` et `src\pipelines\gradio_live_portrait_pipeline.py` |
+| Aucune image lue depuis la webcam (`inference median time: nan`) | Le pilote vidéo par défaut (MSMF) ouvre la webcam mais ne lit rien | Webcam ouverte avec `cv2.VideoCapture(0, cv2.CAP_DSHOW)` dans `run.py` |
+| « no face » avec une photo dont le nom contient un espace | `camera.bat` ne mettait pas le chemin entre guillemets | Guillemets ajoutés dans `camera.bat`, photo renommée `test1.jpg` |
+
+Il ne faut pas lancer `update.bat` : il fait un `git reset --hard` qui efface ces corrections.
+
+#### Limites connues
+
+Le logiciel fonctionne, mais le rendu ne correspond pas à notre objectif : il anime une photo au lieu de transformer la personne filmée. Les 14 images par seconde ont été mesurées sur la vidéo d'exemple, pas avec la webcam.
+
+### 4.4 ComfyUI avec LivePortrait
+
+#### Installation (Windows)
+
+1. J'ai installé Comfy Desktop depuis comfy.org, en choisissant la carte NVIDIA.
+2. Dans le gestionnaire d'extensions de Comfy, j'ai installé `ComfyUI-LivePortraitKJ` et `ComfyUI-KJNodes` (ce dernier fournit le nœud de capture webcam), puis j'ai redémarré Comfy Desktop.
+3. J'ai glissé dans la fenêtre le workflow d'exemple « realtime » du dossier `custom_nodes\ComfyUI-LivePortraitKJ\examples`. Quand des nœuds manquaient (en rouge), je les ai installés depuis la fenêtre « Missing nodes », puis j'ai redémarré.
+4. Au premier lancement, les modèles se téléchargent seuls dans `models\liveportrait`.
+
+La chaîne de nœuds : chargement des modèles, photo (`LoadImage`) et webcam (`Webcam Capture CV2`), détection du visage (`MediaPipeCropper`), `LivePortraitProcess`, puis `PreviewImage`.
+
+#### Réglages utilisés
+
+| Nœud | Réglage |
+|---|---|
+| `DownloadAndLoadLivePortraitModels` | précision `fp16` |
+| `LivePortrait Load MediaPipeCropper` | device : CPU (à changer si l'image est saccadée) |
+| `Webcam Capture CV2` | `cam_index` 0 (passer à 1 si l'image est noire ou vient de la mauvaise caméra) |
+| `Screencap mss` | non relié, ignoré |
+| Lancement | « Run (Instant) » à côté du bouton Run, pour que le traitement tourne en boucle |
+
+J'ai choisi le détecteur MediaPipe, parce que la version InsightFace est compliquée à installer sous Windows. La photo doit être de face, bouche fermée, avec une expression neutre, un fond uni, les épaules visibles et aucun cheveu devant le visage.
+
+#### Problème rencontré
+
+Au premier lancement, le compteur « Total » est resté à 0 % pendant plus de 10 minutes. Le nœud de chargement des modèles les téléchargeait sans afficher de progression. Pour le vérifier, on regarde si la taille du dossier `models\liveportrait` augmente et on lit le panneau « Logs » de Comfy. Si rien ne bouge, on télécharge les modèles à la main.
+
+#### Limites connues
+
+Comme FasterLivePortrait, l'outil anime une photo au lieu de transformer la personne filmée. Pour notre démo, nous voulons modifier la vidéo en direct à partir d'une consigne, ce que fait JoyAI-Video-Edit.
+
+### 4.5 JoyAI-Video-Edit
 
 #### Test de la démo sur Hugging Face
 
@@ -122,6 +207,10 @@ Nos PC n'ont que 8 Go de VRAM, ce qui est trop peu pour ce modèle. Le PC de la 
 - Article : https://arxiv.org/abs/2511.07399
 - Wan 2.1 : https://github.com/Wan-Video/Wan2.1
 - Doc ComfyUI, Wan Video : https://docs.comfy.org/tutorials/video/wan/wan-video
+- FasterLivePortrait : https://github.com/warmshao/FasterLivePortrait
+- LivePortrait (KwaiVGI) : https://github.com/KwaiVGI/LivePortrait
+- ComfyUI-LivePortraitKJ : https://github.com/kijai/ComfyUI-LivePortraitKJ
+- Comfy Desktop : https://www.comfy.org
 - JoyAI-Video-Edit (Hugging Face) : https://huggingface.co/jdopensource/JoyAI-Video-Edit
 - JoyAI-Video-Edit (GitHub) : https://github.com/jd-opensource/JoyAI-Video-Edit
-- Claude Code utilisé pour générer les scripts d'installation : https://claude.com/claude-code
+- Claude Code utilisé pour générer les scripts d'installation et m'aider à corriger FasterLivePortrait : https://claude.com/claude-code
