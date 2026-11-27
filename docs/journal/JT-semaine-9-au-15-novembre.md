@@ -1,0 +1,49 @@
+# Semaine du 9 au 15 novembre 2026
+
+Tomas et Robin, bilan au 13 novembre 2026.
+
+## Mardi 10 novembre
+
+### Tomas : 
+j’ai d’abord voulu installer OpenProject sur une machine virtuelle Debian, DeepFakeSrv, que j’ai créée sur vSphere. La mise en place devenait trop compliquée, alors je l’ai installé avec Docker dans WSL2. J’ai configuré HTTPS et Tailscale, créé les comptes et vérifié les sauvegardes, puis préparé le planning. Nous avons finalement laissé tomber OpenProject pour GitHub, plus simple pour suivre le projet. J’ai aussi commencé les recherches sur les logiciels et le matériel disponible.
+
+### Robin : 
+j’ai comparé Deep-Live-Cam, FaceFusion, DeepFaceLive et une solution en Python. J’ai installé Deep-Live-Cam sur mon PC avec ses dépendances et les modèles ONNX, puis j’ai vérifié que PyTorch et ONNX Runtime détectaient le GPU.
+
+## Mercredi 11 novembre
+
+### Tomas : 
+j’ai continué les recherches sur les logiciels de deepfake et leurs besoins en matériel. J’ai comparé les solutions de remplacement de visage et d’animation de portrait en tenant compte des 8 Go de VRAM de nos PC.
+
+### Robin : 
+j’ai étudié les façons d’installer FasterLivePortrait : Docker, l’installation manuelle ou le pack Windows. J’ai commencé les essais avec le pack Windows, qui contient déjà les principales dépendances, puis nous avons réglé ensemble les problèmes d’installation.
+
+## Jeudi 12 novembre (cours exceptionnel)
+
+### Nous deux : 
+Nous avons continué les essais de FasterLivePortrait et corrigé des problèmes de téléchargement, de FFmpeg et de webcam. Nous avons converti les 15 modèles ONNX en moteurs TensorRT et obtenu environ 14 images/s sur la vidéo d’exemple (pas avec la webcam). Le rendu ne correspond pas à ce que nous cherchons.
+
+### Tomas : 
+j’ai cherché la puissance nécessaire et comparé le prix des cartes RTX avec celui d’une location de GPU, pour une première estimation du budget. J’ai demandé à l’école jusqu’à combien elle pouvait nous aider : pour l’instant, nous disposons de 100 CHF. J’ai aussi libéré de la place sur mon PC pour télécharger Wan.
+
+### Robin : 
+j’ai essayé Comfy Desktop avec ComfyUI-LivePortraitKJ. Après avoir réglé plusieurs problèmes de dépendances Python et de chargement des modèles, j’ai réussi à animer une photo avec les mouvements de ma webcam. J’ai aussi cherché des outils pour la voix et l’affichage, notamment w-okada/RVC et OBS.
+
+## Vendredi 13 novembre
+
+### Nous deux : 
+Lors du daily, Gomez nous a demandé de préciser notre objectif et la puissance de calcul nécessaire pour l’atteindre.
+
+### Tomas : 
+j’ai comparé les besoins en VRAM des solutions et les offres de location de GPU. J’ai préparé le rapport sur le matériel, et nous avons choisi une RTX 5090 de 32 Go chez SwissGPU pour nos prochains essais. J’ai aussi regroupé le journal par semaine et simplifié le suivi GitHub.
+
+### Robin : 
+j’ai comparé le rendu des solutions déjà essayées et fait des recherches sur JoyAI-Video-Edit et sur Wan 2.1 avec StreamDiffusionV2. Les essais de la semaine ont montré les limites de Deep-Live-Cam : il remplace le visage sans toucher aux cheveux, et l’image est saccadée sur notre matériel.
+
+Nous avons essayé [JoyAI-Video-Edit](https://github.com/jd-opensource/JoyAI-Video-Edit) sur Hugging Face. Nous le gardons comme piste principale, et Wan 2.1 servira de comparaison.
+
+## Conclusion de la semaine
+
+Le suivi du projet est en place sur GitHub. Après les premiers essais, notre objectif est plus clair : transformer toute la tête, cheveux compris, et pas seulement remplacer un visage ou animer une photo. Pour y arriver, nous misons sur JoyAI-Video-Edit.
+
+[Retour au journal](README.md)

@@ -8,29 +8,35 @@ J’ai aussi simplifié les textes, ajouté les issues oubliées et regroupé ce
 
 ## Mardi 17 novembre
 
-Tomas : j’ai commencé à chercher des solutions pour transformer la voix en temps réel et trouvé deux projets, [MeanVC2](https://github.com/ASLP-lab/MeanVC2) et [seed-vc-realtime](https://github.com/jiaheguo521/seed-vc-realtime), une version temps réel de [Seed-VC](https://github.com/Plachtaa/seed-vc). Après un premier essai de seed-vc-realtime, j’estime la ressemblance de la voix à environ 75 %, à l’oreille et sans mesure.
+### Tomas : 
+j’ai commencé à chercher des solutions pour transformer la voix en temps réel et trouvé deux projets, [MeanVC2](https://github.com/ASLP-lab/MeanVC2) et [seed-vc-realtime](https://github.com/jiaheguo521/seed-vc-realtime), une version temps réel de [Seed-VC](https://github.com/Plachtaa/seed-vc). Après un premier essai de seed-vc-realtime, j’estime la ressemblance de la voix à environ 75 %, à l’oreille et sans mesure.
 
 J’ai aussi envoyé un mail à M. Rieder, puis à SwissGPU. SwissGPU a accepté de nous offrir 10 heures sur une RTX 5090, électricité et frais compris. En échange, nous citerons leur nom pendant la présentation.
 
-Robin : j’ai testé et enregistré Deep-Live-Cam sur mon PC et la démo en ligne de JoyAI-Video-Edit sur Hugging Face, puis repris les résultats des premiers essais vidéo pour préparer les captures qui serviront à comparer les solutions. Après avoir lu la documentation de Wan 2.1 et de StreamDiffusionV2, j’ai commencé à les installer dans WSL2. J’ai aussi cherché des modèles pour transformer la voix.
+### Robin : 
+j’ai testé et enregistré Deep-Live-Cam sur mon PC et la démo en ligne de JoyAI-Video-Edit sur Hugging Face, puis repris les résultats des premiers essais vidéo pour préparer les captures qui serviront à comparer les solutions. Après avoir lu la documentation de Wan 2.1 et de StreamDiffusionV2, j’ai commencé à les installer dans WSL2. J’ai aussi cherché des modèles pour transformer la voix.
 
 ## Mercredi 18 novembre
 
-Tomas : j’ai parlé avec M. Rieder de la mention de SwissGPU comme sponsor. M. Jäggi nous a ensuite conseillé de contacter M. Guinchard, coordinateur de la formation en médiamatique, car sa section a reçu de nouvelles machines. Je lui ai écrit pour demander si nous pouvions en emprunter une.
+### Tomas : 
+j’ai parlé avec M. Rieder de la mention de SwissGPU comme sponsor. M. Jäggi nous a ensuite conseillé de contacter M. Guinchard, coordinateur de la formation en médiamatique, car sa section a reçu de nouvelles machines. Je lui ai écrit pour demander si nous pouvions en emprunter une.
 
 M. Guinchard a accepté et nous a proposé un PC de la salle B203. Nous sommes allés le voir : il a une NVIDIA RTX A1000 avec 8 Go de VRAM et 32 Go de RAM, à peu près comme nos ordinateurs. C’est trop peu pour le profil de JoyAI-Video-Edit que nous visons, alors nous l’avons remercié et lui avons répondu que nous utiliserions une autre solution.
 
 J’ai continué les essais de Seed-VC Realtime, qui tourne avec Python 3.10 et PyTorch sur CUDA. J’ai réfléchi aux critères pour comparer les modèles de voix : la qualité de la voix, la compréhension des mots et le délai. Je dois encore tester MeanVC2.
 
-Robin : j’ai continué d’installer Wan 2.1 avec StreamDiffusionV2 dans WSL2. Il fallait trouver quelles versions de PyTorch et de CUDA fonctionnent dans cet environnement et combien de VRAM demande le modèle, et l’installation n’est pas encore finie. J’ai comparé les captures de Deep-Live-Cam et de la démo JoyAI-Video-Edit pour juger la fluidité et le rendu du visage et des cheveux. J’ai aussi rédigé le rapport d’installation des modèles vidéo, à partir des problèmes déjà rencontrés avec ComfyUI et LivePortrait.
+### Robin : 
+j’ai continué d’installer Wan 2.1 avec StreamDiffusionV2 dans WSL2. Il fallait trouver quelles versions de PyTorch et de CUDA fonctionnent dans cet environnement et combien de VRAM demande le modèle, et l’installation n’est pas encore finie. J’ai comparé les captures de Deep-Live-Cam et de la démo JoyAI-Video-Edit pour juger la fluidité et le rendu du visage et des cheveux. J’ai aussi rédigé le rapport d’installation des modèles vidéo, à partir des problèmes déjà rencontrés avec ComfyUI et LivePortrait.
 
 ## Vendredi 20 novembre
 
-Tomas : j’ai accepté l’offre de SwissGPU. Je leur ai confirmé que nous les remercierions pendant la présentation et que leur logo apparaîtrait dans notre application de démonstration. Je leur ai aussi posé nos questions sur l’accès au serveur et sur son système Linux.
+### Tomas : 
+j’ai accepté l’offre de SwissGPU. Je leur ai confirmé que nous les remercierions pendant la présentation et que leur logo apparaîtrait dans notre application de démonstration. Je leur ai aussi posé nos questions sur l’accès au serveur et sur son système Linux.
 
 Il ne me restait que 8 Go libres sur mon SSD. J’ai passé environ 1 h 30 à trier mes fichiers et à supprimer ce qui ne servait plus, pour pouvoir télécharger les modèles de voix et les tester sur mon PC.
 
-Robin était absent.
+### Robin :
+absent.
 
 ## Conclusion de la semaine
 
